@@ -120,7 +120,9 @@ public class SwiftyTextView: UITextView {
                 countdownTextLayer.string = "\(minNumberOfWords)/\(maxNumberOfWords)"
                 layer.addSublayer(countdownTextLayer)
             }
-            countdownTextLayer.frame.origin = CGPoint(x: bounds.size.width - countdownTextLayer.bounds.size.width, y: bounds.size.height - countdownTextLayer.bounds.size.height + contentOffset.y)
+            
+            // edited by Mohamed Sawy
+            countdownTextLayer.frame.origin = CGPoint(x: (bounds.size.width - countdownTextLayer.bounds.size.width) - 10, y: (bounds.size.height - countdownTextLayer.bounds.size.height + contentOffset.y) - 4)
         }
         delegate?.textViewDidChange?(self)
     }
